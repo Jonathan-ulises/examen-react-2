@@ -3,11 +3,17 @@ import AvatarTwo from '../assets/img/avatar2.png';
 import AvatarThree from '../assets/img/avatar3.png';
 
 const EditPage = () => {
+
+  const submitForm = (ev: React.FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
+    console.log(ev)
+  }
+
   return (
     <div className='container mt-5'>
       <p className="h2">Registro de Participantes</p>
       <div className="row justify-content-center shadow rounded mt-2">
-        <form>
+        <form onSubmit={ev => submitForm}>
           <div className="mb-3">
             <label htmlFor="txtNombre" className="form-label">Nombre</label>
             <input type="text" className="form-control" id="txtNombre" placeholder="Escribe tu nombre...." />
